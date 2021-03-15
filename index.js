@@ -18,7 +18,7 @@ const port = process.env.PORT || 8080
 const app = express()
 app.use(
   cors({
-    origin: 'https://604f51878d3ab1f4c0d38f0f--silly-kalam-8f7a8b.netlify.app',
+    origin: 'https://silly-kalam-8f7a8b.netlify.app',
   })
 )
 app.use(express.json())
@@ -26,7 +26,7 @@ const server = http.createServer(app)
 //const io = socketIo(server)
 const io = socketIo(server, {
   cors: {
-    origin: 'https://604f51878d3ab1f4c0d38f0f--silly-kalam-8f7a8b.netlify.app',
+    origin: 'https://silly-kalam-8f7a8b.netlify.app',
     methods: ['GET', 'POST'],
     credentials: true,
   },
