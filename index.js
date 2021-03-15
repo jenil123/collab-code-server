@@ -16,13 +16,17 @@ const port = process.env.PORT || 8080
 
 //Setting up express and adding socketIo middleware
 const app = express()
-app.use(cors({ origin: 'http://localhost:3000' }))
+app.use(
+  cors({
+    origin: 'https://604f51878d3ab1f4c0d38f0f--silly-kalam-8f7a8b.netlify.app/',
+  })
+)
 app.use(express.json())
 const server = http.createServer(app)
 //const io = socketIo(server)
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://604f51878d3ab1f4c0d38f0f--silly-kalam-8f7a8b.netlify.app/',
     methods: ['GET', 'POST'],
     credentials: true,
   },
